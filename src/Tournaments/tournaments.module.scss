@@ -1,0 +1,47 @@
+.search_bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.main {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.grid_container {
+  display: grid;
+  grid-gap: 24px 24px;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+}
+
+@media (min-width: 320px) {
+  .grid_container {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.tournament_card {
+  background-color: #222;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  .action_button_wrap {
+    margin-top: auto;
+    padding-top: 8px;
+
+    .action_button {
+      cursor: pointer;
+      &:first-child {
+        margin-right: 8px;
+      }
+    }
+  }
+}
