@@ -18,7 +18,6 @@ export const searchTournaments = createAsyncThunk(
     const { data } = await axios.get(
       `${API_TOURNAMENTS_URL}?q=${payload.name}`
     );
-    console.log(payload.name, data);
     return data;
   }
 );
@@ -89,8 +88,6 @@ const tournamentsSlice = createSlice({
       state.data[index].name = payload.name;
     },
     [deleteTournament.fulfilled]: (state, { payload }) => {
-      console.log('state', state.data);
-      console.log('payload', payload);
       state.data = state.data.filter(tournament => tournament.id !== payload);
     }
   }

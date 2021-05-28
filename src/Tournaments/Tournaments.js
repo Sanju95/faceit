@@ -34,7 +34,6 @@ const Tournaments = () => {
 
   const handleSearch = e => {
     setSearchTerm(e.target.value);
-    console.log(e.key);
     e.key === 'Enter' && dispatch(searchTournaments({ name: e.target.value }));
   };
 
